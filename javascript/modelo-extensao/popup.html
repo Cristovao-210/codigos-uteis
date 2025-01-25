@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Título Aba</title>
+  <link rel="stylesheet" href="libs/bootstrap.min.css">
+
+</head>
+
+<body style="background-color:rgb(226, 223, 223); border: 1px solid brown;" >
+
+  <div class="container text-center">
+    <br><br>
+    <h2>Títudo App</h2><br>
+
+    <div class="text-center">
+      <img width="300" height="100" src="images/img_atos.JPG" class="rounded" alt="Imagem editor do SEI">
+    </div>
+    <br>
+
+    <!--Exemplo de seleção de ações-->
+    <label for="opcoes-formularios"><h6>Selecione uma opção</h6</label>
+    <select class="form-select" aria-label="Default select example" id="opcoes-formularios">
+      <option selected></option>
+      <option value="1">opção 1</option>
+      <option value="2">opção 2</option>
+    </select>
+    <br>
+
+    <!--Exemplo de imput para entrada ou saída-->
+    <div class="form-floating" id="area-de-copia">
+      <textarea readonly class="form-control" id="textoExibido" style="height: 200px"></textarea>
+      <button id="btnCopiaTexto" type="button" class="btn btn-warning" style="margin: 15px;"><strong>Ação do botão</strong></button>
+      <!--<button id="btnCancelCopia" type="button" class="btn btn-danger"><strong>CANCELAR</strong></button>-->
+    </div>
+
+    <!--Caregando ações -->
+    <script src="scripts/popup.js"></script>
+    
+</body>
+
+</html>
