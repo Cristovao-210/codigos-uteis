@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formatação de texto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" style="text-align: center;">
+      <h3 style="padding-top: 30px;">Informe o nome a ser convertido para o padrão SIAPE</h3>
+      <input size="100%" type="text" name="texto" id="texto"><br>
+      <button class="btn btn-primary" style="margin-top: 30px;" onclick="padraoSiape()">Converter Nome</button>
+    </div>
+    <div class="container" style="text-align: center; padding-top: 30px;" id="texto-convertido">
+      
+    </div>
+    
+
+
+    <script type="text/javascript">
+
+      function padraoSiape() {
+
+         const texto_capturado = document.getElementById('texto');
+         const texto_convertido = document.getElementById('texto-convertido');
+         let texto = texto_capturado.value;
+
+         let acentos = {
+          'á': 'a', 'Á': 'A',
+          'é': 'e', 'É': 'E',
+          'í': 'i', 'Í': 'I',
+          'ó': 'o', 'Ó': 'O',
+          'ú': 'u', 'Ú': 'U',
+          'à': 'a', 'À': 'A',
+          'â': 'a', 'Â': 'A',
+          'ê': 'e', 'Ê': 'E',
+          'ô': 'o', 'Ô': 'O',
+          'ü': 'u', 'Ü': 'U',
+          'ã': 'a', 'Ã': 'A',
+          'õ': 'o', 'Õ': 'O'
+      };
+
+      Object.keys(acentos).forEach(chave => {
+          if (texto.includes(chave))
+              texto = texto.replace(chave, acentos[chave]).toUpperCase();
+               // Imprime o valor associado à chave
+      });
+      texto_convertido.innerHTML = texto.toUpperCase();
+
+    }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
